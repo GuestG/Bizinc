@@ -59,7 +59,37 @@ app.listen(port, () => {
 
 
 4: Coding Challenge: Static Page
+//This is after inserting an items.js file
 
+import fs from 'fs';
+import path from 'path';
+
+const dataFilePath = path.join(process.cwd(), 'public', 'data', 'items.json');
+
+export async function getStaticProps() {
+  // Read the JSON file
+  const fileContents = fs.readFileSync(dataFilePath, 'utf8');
+  const items = JSON.parse(fileContents);
+
+  return {
+    props: {
+      items
+    }
+  };
+}
+
+export default function ItemsPage({ items }) {
+  return (
+    <div>
+      <h1>List of Items</h1>
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 
 5: Coding Challenge: Basic SQL Queries
