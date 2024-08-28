@@ -38,6 +38,7 @@ function Counter() {
 export default Counter;
 
 
+
 3: Coding Challenge: Basic API Endpoint
 const express = require('express');
 const app = express();
@@ -62,6 +63,20 @@ app.listen(port, () => {
 
 
 5: Coding Challenge: Basic SQL Queries
+//to make the table
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE
+);
+
+//insert a sample user
+INSERT INTO users (name, email)
+VALUES ('John Doe', 'john.doe@example.com');
+
+// get all users
+INSERT INTO users (name, email)
+VALUES ('John Doe', 'john.doe@example.com');
 
 
 
