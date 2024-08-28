@@ -36,3 +36,36 @@ function Counter() {
 }
 
 export default Counter;
+
+
+3: Coding Challenge: Basic API Endpoint
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Define the /message endpoint
+app.get('/message', (req, res) => {
+  res.json({ message: "Hello, World!" });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+(use tool like postman to see message)
+
+
+
+4: Coding Challenge: Static Page
+
+
+
+5: Coding Challenge: Basic SQL Queries
+
+
+
+7: Coding Challenge: Basic Custom Plugin
+
+
+
