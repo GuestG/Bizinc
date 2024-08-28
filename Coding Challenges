@@ -81,6 +81,25 @@ VALUES ('John Doe', 'john.doe@example.com');
 
 
 7: Coding Challenge: Basic Custom Plugin
+<?php
+/*
+Plugin Name: Greeting Shortcode
+Description: Adds a shortcode [greeting] that outputs "Welcome to My Site!".
+Version: 1.0
+Author: Your Name
+*/
+
+function greeting_shortcode() {
+    return "Welcome to My Site!";
+}
+
+// Register the shortcode with WordPress
+function register_greeting_shortcode() {
+    add_shortcode('greeting', 'greeting_shortcode');
+}
+
+// Hook the shortcode registration function to the 'init' action
+add_action('init', 'register_greeting_shortcode');
 
 
 
